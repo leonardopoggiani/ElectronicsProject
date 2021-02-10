@@ -12,8 +12,7 @@ end iir;
 
 architecture arch_iir of iir is
 signal temp : unsigned(15 downto 0) := (others => '0');
-begin
-process (clk)
+beginprocess (clk)
 	begin
 		if rising_edge(clk) then
 			out_data <= std_logic_vector(unsigned(in_data) + temp);
