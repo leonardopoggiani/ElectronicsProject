@@ -44,7 +44,6 @@ entity DFF is
 end DFF;
 
 architecture rtl of DFF is
---
 begin
 
 	dfc_p : process(clk, resetn)
