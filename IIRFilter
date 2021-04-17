@@ -6,12 +6,11 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_arith.all;
-use IEEE.std_logic_unsigned.all;
+use ieee.std_logic_arith.UNSIGNED;
 use IEEE.std_logic_signed.all;
 use IEEE.math_real.all;
 use IEEE.math_complex.all;
 use IEEE.std_logic_textio.all;
-
 library WORK;
 
 entity iir is
