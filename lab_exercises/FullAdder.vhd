@@ -1,22 +1,26 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+library ieee;
+use ieee.std_logic_1164.all;
 
-entity FA is
-	port(
-		A 		: in std_logic;
-		B 		: in std_logic;
-		cin 		: in std_logic;
-		s	  	: out std_logic;
-		cout		: out std_logic
-	);
-end FA;
-
-architecture rtl of FA is
+entity fullAdder is
+        port( -- Input of the full-adder
+                a   : in std_logic;
+                -- Input of the full-adder
+                b   : in std_logic;
+                -- Carry input 
+                c_i : in std_logic;
+                -- Output of the full-adder
+                o   : out std_logic;
+                -- Carry output
+                c_o : out std_logic
+            );
+end fullAdder;
+architecture data_flow of fullAdder is
+   
 begin
-	
-	s <= A xor B xor cin;
-	cout <= (A and B) or (A and cin) or (B and cin);
-
-end rtl;
-
+   
+      o   <= a xor b xor c_i;
+      
+      c_o <= (a and b) or (b and c_i) or (c_i and a);
+   
+end data_flow;
+    
