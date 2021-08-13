@@ -36,22 +36,22 @@ fvtool(iir);
 %% Test with audio signals
 
 % Read the audio samples from the WAV file as int16 array
-[synth_original, Fs_synth] = audioread('wav/Synthesizer.wav', 'native');
-[street_original, Fs_street] = audioread('wav/Street.wav', 'native');
+[example1_original, Fs_example1] = audioread('wav/file_example_WAV_5MG.wav', 'native');
+[example2_original, Fs_example2] = audioread('wav/sample4.wav', 'native');
 
 % Convert the int16 audio samples into 16 bit signed fixed values
-synth_fix = fi(synth_original, true, 16, 0);
-street_fix = fi(street_original, true, 16, 0);
+example1_fix = fi(example1_original, true, 16, 0);
+example2_fix = fi(example2_original, true, 16, 0);
 
 % Filter the audio signal
-synth_filtered_fix = filter(iir, synth_fix);
-street_filtered_fix = filter(iir, street_fix);
+example1_filtered_fix = filter(iir, example1_fix);
+example2_filtered_fix = filter(iir, example2_fix);
 
 % Save the filtered audio in a WAV file
-audiowrite('wav/SynthesizerFiltered.wav', int16(synth_filtered_fix), Fs_synth);
-audiowrite('wav/StreetFiltered.wav', int16(street_filtered_fix), Fs_street);
+audiowrite('wav/Example1Filtered.wav', int16(example1_filtered_fix), Fs_example1);
+audiowrite('wav/Example2Filtered.wav', int16(example2_filtered_fix), Fs_example2);
 
 %% Save data for testbenches in txt files
 
-buildTxtFiles('synth', synth_fix, synth_filtered_fix);
-buildTxtFiles('street', synth_fix, synth_filtered_fix);
+buildTxtFiles('sample1', example1_fix, example1_filtered_fix);
+buildTxtFiles('sample2', example2_fix, example2_filtered_fix);

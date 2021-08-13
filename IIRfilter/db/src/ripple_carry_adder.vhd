@@ -3,6 +3,7 @@ use IEEE.std_logic_1164.all;
 
 entity ripple_carry_adder is
   generic ( Nbit : positive := 8);
+
   port (
     a    : in std_logic_vector(Nbit - 1 downto 0);
     b    : in std_logic_vector(Nbit - 1 downto 0);
@@ -25,7 +26,7 @@ component full_adder is
   );
 end component;
 
-signal carry : std_logic_vector (Nbit - 1 downto 0);
+signal carries : std_logic_vector (Nbit - 1 downto 0);
 
 begin
 
