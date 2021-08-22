@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity ShiftRegister is
-	generic (Nbit : positive := 8);
+	generic (Nbit : natural := 8);
 	port (
 		din 	: in	std_logic;
 		clk	: in 	std_logic;

@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ripple_carry_adder is
-  generic ( Nbit : positive := 8);
+  generic ( Nbit : natural := 8);
 
   port (
     a    : in std_logic_vector(Nbit - 1 downto 0);
@@ -39,7 +39,7 @@ GEN: for i in 0 to Nbit-1 generate
 				b    => b(i),
 				cin  => cin,
 				s    => s(i),
-				cout => carry(i)		
+				cout => carries(i)		
 			);
 	end generate FIRST;
 	
@@ -48,15 +48,15 @@ GEN: for i in 0 to Nbit-1 generate
 			port map (
 				a    => a(i),
 				b    => b(i),
-				cin  => carry(i-1),
+				cin  => carries(i-1),
 				s    => s(i),
-				cout => carry(i)		
+				cout => carries(i)		
 			);			
 	end generate SECONDS;	
 
 end generate GEN;
 
-cout <= carry(Nbit-1);
+cout <= carries(Nbit-1);
 
 end beh;
 

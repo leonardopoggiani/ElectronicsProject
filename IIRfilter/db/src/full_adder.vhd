@@ -9,7 +9,7 @@ entity full_adder is
 	s		:	out std_logic;
 	cout 		:	out std_logic
 	);
-end FullAdder;	
+end full_adder;	
 
 architecture beh of full_adder is
 begin

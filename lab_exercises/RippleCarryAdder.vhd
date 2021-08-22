@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity RippleCarryAdder is
-	generic (Nbit : positive := 8);
+	generic (Nbit : natural := 8);
 	port (
 		a 	: in	std_logic_vector(Nbit-1 downto 0);
 		b	: in 	std_logic_vector(Nbit-1 downto 0);
