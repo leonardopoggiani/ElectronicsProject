@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity RippleCarryAdderSubtractor is
+entity ripple_carry_adder_substractor is
 	generic (Nbit : natural := 8);
 	port (
 	a		:	in	std_logic_vector(Nbit-1 downto 0); 
@@ -10,12 +10,12 @@ entity RippleCarryAdderSubtractor is
 	cout	:	out	std_logic;
 	s		:	out	std_logic_vector(Nbit-1 downto 0)
 	);
-end RippleCarryAdderSubtractor;
+end ripple_carry_adder_substractor;
 
 
-architecture RippleCarryAdderSubtractor_Arch of RippleCarryAdderSubtractor is
+architecture struct of ripple_carry_adder_substractor is
 
-component FullAdderSubtractor is
+component full_adder_substractor is
 	port (
 		a		:	in	std_logic;
 		b		:	in	std_logic;
@@ -31,7 +31,7 @@ signal carries : std_logic_vector(Nbit downto 0);
 begin
 	carries(0) <= d;
 	GEN: for i in 0 to Nbit-1 generate
-		FASx: FullAdderSubtractor port map(a(i), b(i), d, carries(i), s(i), carries(i+1));
+		FASx: full_adder_substractor port map(a(i), b(i), d, carries(i), s(i), carries(i+1));
 	end generate GEN;
 	cout <= carries(Nbit);
-end RippleCarryAdderSubtractor_Arch;
+end struct;

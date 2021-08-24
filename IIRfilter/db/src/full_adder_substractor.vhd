@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 	
-entity FullAdderSubtractor is
+entity full_adder_substractor is
 	port (
 	a		:	in	std_logic;
 	b		:	in	std_logic;
@@ -10,11 +10,11 @@ entity FullAdderSubtractor is
 	s		:	out std_logic;
 	cout 	:	out std_logic
 	);
-end FullAdderSubtractor;	
+end full_adder_substractor;	
 
-architecture FullAdderSubtractor_Arch of FullAdderSubtractor is
+architecture struct of full_adder_substractor is
 
-component FullAdder
+component full_adder
 	port (
 		a		:	in	std_logic;
 		b		:	in	std_logic;
@@ -26,9 +26,8 @@ end component;
 
 signal muxA	:	std_logic;
 
-
 begin
-	internalFullAdder: FullAdder
+	internalFullAdder: full_adder
 	port map(
 		a		=>	muxA,
 		b		=>	b,
@@ -39,4 +38,4 @@ begin
 	
 	muxA <=	a when d = '0' else not(a);
 	
-end FullAdderSubtractor_Arch;
+end struct;

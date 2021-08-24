@@ -7,7 +7,7 @@ entity full_adder is
 	b		:	in	std_logic;
 	cin		:	in	std_logic;
 	s		:	out std_logic;
-	cout 		:	out std_logic
+	cout 	:	out std_logic
 	);
 end full_adder;	
 

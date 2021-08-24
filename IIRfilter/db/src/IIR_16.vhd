@@ -11,10 +11,10 @@ entity IIR16bit is
 	);
 end IIR16bit;	
 
-architecture IIR_Arch of IIR16bit is
+architecture struct of IIR16bit is
 
 component IIR 
-	generic (Nbit : positive := 8);
+	generic (Nbit : natural := 8);
 	port (
 		clk		:	in	std_logic;
 		rst_l	:	in	std_logic;
@@ -30,4 +30,4 @@ begin
 	generic map(16)
 	port map(clk, rst_l, x, y);
 
-end IIR_Arch;
+end struct;

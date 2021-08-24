@@ -5,19 +5,19 @@ entity IIR is
 	generic (Nbit : natural := 8);
 	port (
 		clk		:	in	std_logic;	-- clock
-		rst_l	:	in	std_logic;	-- reset (active low)
+		rst_l		:	in	std_logic;	-- reset (active low)
 		x		:	in	std_logic_vector(Nbit-1 downto 0); -- input	
 		y		:	out	std_logic_vector(Nbit-1 downto 0)  -- output
 	);
 end IIR;	
 
-architecture struct of IIR is	 
+architecture IIR_Arch of IIR is	 
 
 -- Buses used for the internal connections among the delay elemets
 type BusArray is array (0 to 4) of std_logic_vector(Nbit-1 downto 0);
 
 -- D Flip Flop Register on Nbit bits
-component reg
+component Reg
 	generic (Nbit : natural := 8);
 	port (
 		clk		:	in	std_logic; -- clock	
@@ -46,7 +46,7 @@ end component;
 -- This feature is useful for computing the 2 complement
 -- of a given number using b = 0 and cin = 1, in fact:
 -- cpl2(a) = not(a) + 1
-component ripple_carry_adder_substractor
+component RippleCarryAdderSubtractor
 	generic (Nbit : natural := 8);
 	port (
 	a		:	in	std_logic_vector(Nbit-1 downto 0); -- first element of the sum 
@@ -67,7 +67,7 @@ begin
 	
 	-- Instanciate the delay elements (registers)
 	GEN: for i in 0 to 3 generate
-		REGx: reg generic map(Nbit) port map(clk, rst_l, samples(i), samples(i+1));
+		REGx: Reg generic map(Nbit) port map(clk, rst_l, samples(i), samples(i+1));
 	end generate GEN;
 	
 	-- Compute x + samples(1)
@@ -82,7 +82,7 @@ begin
 	);
 	
 	-- Compute auxBus2 - auxBus1
-	outputAdder: ripple_carry_adder_substractor
+	outputAdder: RippleCarryAdderSubtractor
 	generic map(Nbit+2)
 	port map (
 		a		=>	auxBus1,
@@ -99,4 +99,4 @@ begin
 	-- The output is taken by the Nbit LSBs of the toOut signal
 	y <= toOut(Nbit-1 downto 0);
 	
-end struct;
+end IIR_Arch;

@@ -11,7 +11,7 @@ end IIR_TB_Delta;
 architecture TB_Arch of IIR_TB_Delta is	
 
 component IIR  
-	generic (Nbit : natural := 8);
+	generic (Nbit : natural := 16);
 	port (
 		clk		:	in	std_logic;
 		rst_l	:	in	std_logic;
@@ -65,7 +65,6 @@ begin
 			
 			sample <= delta_in(i);
 			expected <= expected_resp(i);
-			
 			
 			wait until clk'event and clk='1'; 
 			
