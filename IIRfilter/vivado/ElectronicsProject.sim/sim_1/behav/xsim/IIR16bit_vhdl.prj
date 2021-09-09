@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../db/src/IIR.vhd" \
+"../../../../../db/src/d_flip_flop.vhd" \
+"../../../../../db/src/full_adder.vhd" \
+"../../../../../db/src/full_adder_substractor.vhd" \
+"../../../../../db/src/register.vhd" \
+"../../../../../db/src/ripple_carry_adder.vhd" \
+"../../../../../db/src/ripple_carry_adder_substractor.vhd" \
+"../../../../../db/src/IIR_16.vhd" \
+
+# Do not sort compile order
+nosort

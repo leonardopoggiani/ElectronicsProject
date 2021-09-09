@@ -1,0 +1,21 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 4997646ef93745a4a944cbfea0c1a9a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot IIR16bit_behav xil_defaultlib.IIR16bit -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture struct of entity xil_defaultlib.d_flip_flop [d_flip_flop_default]
+Compiling architecture struct of entity xil_defaultlib.reg [\reg(nbit=16)\]
+Compiling architecture beh of entity xil_defaultlib.full_adder [full_adder_default]
+Compiling architecture struct of entity xil_defaultlib.ripple_carry_adder [\ripple_carry_adder(nbit=16)\]
+Compiling architecture struct of entity xil_defaultlib.full_adder_substractor [full_adder_substractor_default]
+Compiling architecture struct of entity xil_defaultlib.ripple_carry_adder_substractor [\ripple_carry_adder_substractor(...]
+Compiling architecture struct of entity xil_defaultlib.IIR [\IIR(nbit=16)\]
+Compiling architecture struct of entity xil_defaultlib.iir16bit
+Built simulation snapshot IIR16bit_behav

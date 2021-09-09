@@ -1,0 +1,16 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/IIR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'IIR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/d_flip_flop.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'd_flip_flop'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/full_adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'full_adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/full_adder_substractor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'full_adder_substractor'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/ripple_carry_adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ripple_carry_adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/ripple_carry_adder_substractor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ripple_carry_adder_substractor'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/db/src/IIR_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'IIR16bit'
