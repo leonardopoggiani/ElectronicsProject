@@ -4,11 +4,11 @@ use IEEE.std_logic_1164.all;
 entity ripple_carry_adder is
 	generic (Nbit : positive := 8);
 	port (
-	a		:	in	std_logic_vector(Nbit-1 downto 0); 
-	b		:	in	std_logic_vector(Nbit-1 downto 0);
-	cin		:	in	std_logic;
-	cout	:	out	std_logic;
-	s		:	out	std_logic_vector(Nbit-1 downto 0)
+		a		:	in	std_logic_vector(Nbit-1 downto 0); 
+		b		:	in	std_logic_vector(Nbit-1 downto 0);
+		cin		:	in	std_logic;
+		cout	:	out	std_logic;
+		s		:	out	std_logic_vector(Nbit-1 downto 0)
 	);
 end ripple_carry_adder;
 
@@ -17,11 +17,11 @@ architecture struct of ripple_carry_adder is
 
 component full_adder is
 	port (
-	a		:	in	std_logic;
-	b		:	in	std_logic;
-	cin		:	in	std_logic;
-	s		:	out std_logic;
-	cout 	:	out std_logic
+		a		:	in	std_logic;
+		b		:	in	std_logic;
+		cin		:	in	std_logic;
+		s		:	out std_logic;
+		cout 	:	out std_logic
 	);
 end component;
 

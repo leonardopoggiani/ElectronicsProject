@@ -49,11 +49,11 @@ end component;
 component ripple_carry_adder_substractor
 	generic (Nbit : natural := 8);
 	port (
-	a		:	in	std_logic_vector(Nbit-1 downto 0); -- first element of the sum 
-	b		:	in	std_logic_vector(Nbit-1 downto 0);	-- second element of the sum
-	d		:	in	std_logic;	-- flag for the operation: 0 -> sum / 1 -> subtraction
-	cout	:	out	std_logic; -- carry out
-	s		:	out	std_logic_vector(Nbit-1 downto 0)	-- result of the sum
+		a		:	in	std_logic_vector(Nbit-1 downto 0); -- first element of the sum 
+		b		:	in	std_logic_vector(Nbit-1 downto 0);	-- second element of the sum
+		d		:	in	std_logic;	-- flag for the operation: 0 -> sum / 1 -> subtraction
+		cout	:	out	std_logic; -- carry out
+		s		:	out	std_logic_vector(Nbit-1 downto 0)	-- result of the sum
 	);
 end component;
 

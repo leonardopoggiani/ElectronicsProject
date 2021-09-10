@@ -4,11 +4,11 @@ use IEEE.std_logic_1164.all;
 entity ripple_carry_adder_substractor is
 	generic (Nbit : natural := 8);
 	port (
-	a		:	in	std_logic_vector(Nbit-1 downto 0); 
-	b		:	in	std_logic_vector(Nbit-1 downto 0);
-	d		:	in	std_logic;
-	cout	:	out	std_logic;
-	s		:	out	std_logic_vector(Nbit-1 downto 0)
+		a		:	in	std_logic_vector(Nbit-1 downto 0); 
+		b		:	in	std_logic_vector(Nbit-1 downto 0);
+		d		:	in	std_logic;
+		cout	:	out	std_logic;
+		s		:	out	std_logic_vector(Nbit-1 downto 0)
 	);
 end ripple_carry_adder_substractor;
 
