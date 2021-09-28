@@ -1,22 +1,22 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity iir_tb is -- empty entity declaration
+entity iir_tb is
 end entity iir_tb;
 
 architecture bhv of iir_tb is
-	constant T_CLK 		: time := 22676 ns; 	-- clock for audio application
-	constant T_RESET 	: time := 55352 ns; 		-- reset time 
+	constant T_CLK 		: time := 22676 ns; 
+	constant T_RESET 	: time := 55352 ns; 	
 
-	signal clk_tb 	: std_logic := '0'; 		-- clck starts at 0
-	signal rst_tb 	: std_logic := '0';			-- reset startts at 0
+	signal clk_tb 	: std_logic := '0'; 	
+	signal rst_tb 	: std_logic := '0';		
 
-	signal x_tb 	: std_logic_vector(15 downto 0); 	-- declaring input vector
-	signal y_tb		: std_logic_vector(15 downto 0); 	-- output vector
+	signal x_tb 	: std_logic_vector(15 downto 0); 
+	signal y_tb		: std_logic_vector(15 downto 0); 
 
 	signal end_sim 	: std_logic := '1'; 
 
-	component iir is 				-- calling filter component
+	component iir is 				
 		port (
 			x 	: in std_logic_vector(15 downto 0);
 			y 	: out std_logic_vector(15 downto 0);
@@ -27,10 +27,10 @@ architecture bhv of iir_tb is
 
 begin
 
-	clk_tb <= (not(clk_tb) and end_sim) after T_CLK / 2;	-- enerating clock
+	clk_tb <= (not(clk_tb) and end_sim) after T_CLK / 2;	
 	rst_tb <= '1' after T_RESET; 							-- 
  
-	test_iir: iir 		-- mapping the filter with signals of the test bench
+	test_iir: iir 		
 		port map (
 			x => x_tb,
 			y => y_tb,
@@ -39,13 +39,13 @@ begin
 		);
 	
 		d_process : process (clk_tb, rst_tb) 	
-			variable t : integer := 0; 	-- clock counter
+			variable t : integer := 0; 	
 		begin
 			if(rst_tb = '0') then
-				x_tb <= (others => '0'); -- in case of reset
+				x_tb <= (others => '0');
 				t := 0; 
 			elsif (rising_edge(clk_tb)) then
-				case(t) is 				-- calues generated with MATLAB screipt
+				case(t) is 				
 					when 1 => x_tb <= "0000000000000000";
 					when 2 => x_tb <= "0100100011100100";
 					when 3 => x_tb <= "0010010010101010";

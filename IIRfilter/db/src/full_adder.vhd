@@ -3,11 +3,11 @@ use IEEE.std_logic_1164.all;
 	
 entity full_adder is
 	port (
-	a		:	in	std_logic;
-	b		:	in	std_logic;
-	cin		:	in	std_logic;
-	s		:	out std_logic;
-	cout 	:	out std_logic
+		a		:	in	std_logic;
+		b		:	in	std_logic;
+		cin		:	in	std_logic;
+		s		:	out std_logic;
+		cout 	:	out std_logic
 	);
 end full_adder;	
 

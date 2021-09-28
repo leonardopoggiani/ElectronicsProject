@@ -1,9 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all; -- for the casting 
-
--- This testbench aims to check if the impulse response
--- of the filter is the same as the one designed in MATLAB
+use IEEE.numeric_std.all; 
 
 entity IIR_TB_Delta is
 end IIR_TB_Delta;
@@ -30,7 +27,6 @@ end component;
 	signal enable	:	std_logic	:=	'1';
 	signal expected :	std_logic_vector(BITS-1 downto 0);
 	
-	-- Data type to store the sequence of samples
 	type WAV_IN is array (0 to SAMPLES-1) of std_logic_vector(BITS-1 downto 0);
 
 begin
@@ -42,7 +38,6 @@ begin
 	-- clock generator
 	clk <= not clk and enable after 11338 ns; -- 44100Hz clock
 	
-	-- stimuli
 	driver_p: process
 	
 	variable delta_in : WAV_IN := ("0000000000000001", "0000000000000000",
@@ -55,12 +50,10 @@ begin
 	
 	begin
 		
-		-- inital reset of the filter
 		rst_l <= '0';
 		wait until clk'event and clk='1';
 		rst_l <= '1';
 		
-		-- loop over all the samples 
 		for i in 0 to SAMPLES-1 loop	
 			
 			sample <= delta_in(i);
@@ -68,8 +61,6 @@ begin
 			
 			wait until clk'event and clk='1'; 
 			
-			-- If the actual output and the expected output
-			-- mismatch, raise an asserion
 			assert (output = expected)
 			report "Mismatch for index i = " & integer'image(i)
 			severity error;
