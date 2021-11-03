@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
--- 16-bit IIR filter
+-- IIR filter wrapper
 entity IIR16bit is
 	port (
 		clk		:	in	std_logic;	

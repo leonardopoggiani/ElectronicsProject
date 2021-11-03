@@ -24,18 +24,18 @@ component full_adder
 	);
 end component;
 
-signal muxA	:	std_logic;
+signal multiplexedA	:	std_logic;
 
 begin
 	internalFullAdder: full_adder
 	port map(
-		a		=>	muxA,
+		a		=>	multiplexedA,
 		b		=>	b,
 		cin		=>	cin,
 		s		=>	s,
 		cout	=>	cout
 	);					
 	
-	muxA <=	a when d = '0' else not(a);
+	multiplexedA <=	a when d = '0' else not(a);
 	
 end struct;

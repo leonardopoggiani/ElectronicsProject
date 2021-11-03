@@ -13,9 +13,9 @@ end IIR;
 
 architecture struct of IIR is	 
 
-type BusArray is array (0 to 4) of std_logic_vector(Nbit-1 downto 0);
+type bus is array (0 to 4) of std_logic_vector(Nbit-1 downto 0);
 
-component reg
+component register
 	generic (Nbit : natural := 8);
 	port (
 		clk		:	in	std_logic; 
@@ -47,8 +47,8 @@ component ripple_carry_adder_substractor
 	);
 end component;
 
-signal samples	:	BusArray;
-signal toOut	:	std_logic_vector(Nbit+1 downto 0); 
+signal samples	:	bus;
+signal output	:	std_logic_vector(Nbit+1 downto 0); 
 														
 signal auxBus1	:	std_logic_vector(Nbit+1 downto 0); 
 signal auxBus2	:	std_logic_vector(Nbit+1 downto 0);
@@ -56,7 +56,7 @@ signal auxBus2	:	std_logic_vector(Nbit+1 downto 0);
 begin
 	
 	GEN: for i in 0 to 3 generate
-		REGx: reg generic map(Nbit) port map(clk, rst_l, samples(i), samples(i+1));
+		REGx: register generic map(Nbit) port map(clk, rst_l, samples(i), samples(i+1));
 	end generate GEN;
 	
 	inputAdder: ripple_carry_adder
@@ -76,12 +76,12 @@ begin
 		b		=>	auxBus2,
 		d		=>	'1',
 		cout	=>	open,
-		s		=>	toOut
+		s		=>	output
 	);
 
 	auxBus1 <= samples(0)(Nbit-1) & samples(0)(Nbit-1) & samples(0);	
 	auxBus2 <= samples(4)(Nbit-1) & samples(4)(Nbit-1) & samples(4);
 	
-	y <= toOut(Nbit-1 downto 0);
+	y <= output(Nbit-1 downto 0);
 	
 end struct;
