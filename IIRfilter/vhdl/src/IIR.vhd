@@ -50,8 +50,8 @@ end component;
 signal samples	:	bus;
 signal output	:	std_logic_vector(Nbit+1 downto 0); 
 														
-signal auxBus1	:	std_logic_vector(Nbit+1 downto 0); 
-signal auxBus2	:	std_logic_vector(Nbit+1 downto 0);
+signal partialBus1	:	std_logic_vector(Nbit+1 downto 0); 
+signal partialBus2	:	std_logic_vector(Nbit+1 downto 0);
 
 begin
 	
@@ -72,15 +72,15 @@ begin
 	outputAdder: ripple_carry_adder_substractor
 	generic map(Nbit+2)
 	port map (
-		a		=>	auxBus1,
-		b		=>	auxBus2,
+		a		=>	partialBus1,
+		b		=>	partialBus2,
 		d		=>	'1',
 		cout	=>	open,
 		s		=>	output
 	);
 
-	auxBus1 <= samples(0)(Nbit-1) & samples(0)(Nbit-1) & samples(0);	
-	auxBus2 <= samples(4)(Nbit-1) & samples(4)(Nbit-1) & samples(4);
+	partialBus1 <= samples(0)(Nbit-1) & samples(0)(Nbit-1) & samples(0);	
+	partialBus2 <= samples(4)(Nbit-1) & samples(4)(Nbit-1) & samples(4);
 	
 	y <= output(Nbit-1 downto 0);
 	
