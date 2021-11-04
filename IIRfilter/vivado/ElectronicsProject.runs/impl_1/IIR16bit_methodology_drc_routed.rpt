@@ -1,8 +1,8 @@
-Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Oct  7 08:05:25 2021
-| Host         : LEO-DEV running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Nov  4 09:18:52 2021
+| Host         : LEO-WIN running 64-bit major release  (build 9200)
 | Command      : report_methodology -file IIR16bit_methodology_drc_routed.rpt -pb IIR16bit_methodology_drc_routed.pb -rpx IIR16bit_methodology_drc_routed.rpx
 | Design       : IIR16bit
 | Device       : xc7z010clg400-1
@@ -23,15 +23,21 @@ Table of Contents
           Floorplan: checkpoint_IIR16bit
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 33
+             Violations found: 34
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
 | TIMING-18 | Warning  | Missing input or output delay | 33         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell filter/GEN[3].REGx/GEN[1].DFFx/y_OBUF[1]_inst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) filter/GEN[0].REGx/GEN[14].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[15].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[0].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[10].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[12].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[13].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[1].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[2].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[4].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[6].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[8].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[11].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[3].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[5].DFFx/q_reg/CLR, filter/GEN[0].REGx/GEN[7].DFFx/q_reg/CLR (the first 15 of 64 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on rst_l relative to clock(s) clk44100

@@ -18,7 +18,7 @@ component IIR
 end component;
 
 	constant BITS		:	natural	:=	16;
-	constant SAMPLES 	:	natural	:= 	1000;
+	constant SAMPLES 	:	natural	:= 	5000;
 
 	signal clk		: 	std_logic	:= '0'; 
 	signal rst_l 	: 	std_logic;

@@ -60,16 +60,20 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param chipscope.maxJobs 2
+  set_param synth.incrementalSynthesisCache C:/Users/leona/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8388-LEO-WIN/incrSyn
   reset_param project.defaultXPMLibraries 
-  open_checkpoint C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.runs/impl_1/IIR16bit.dcp
-  set_property webtalk.parent_dir C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.cache/wt [current_project]
-  set_property parent.project_path C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.xpr [current_project]
-  set_property ip_output_repo C:/Users/leona/Dropbox/PC/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.cache/ip [current_project]
+  open_checkpoint C:/Users/leona/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.runs/impl_1/IIR16bit.dcp
+  set_property webtalk.parent_dir C:/Users/leona/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.cache/wt [current_project]
+  set_property parent.project_path C:/Users/leona/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.xpr [current_project]
+  set_property ip_output_repo C:/Users/leona/Documents/GitHub/ElectronicsProject/IIRfilter/vivado/ElectronicsProject.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   close_msg_db -file init_design.pb
 } RESULT]

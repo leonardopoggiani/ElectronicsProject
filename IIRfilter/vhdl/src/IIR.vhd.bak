@@ -13,7 +13,7 @@ end IIR;
 
 architecture struct of IIR is	 
 
-type fullBus is array (0 to 4) of std_logic_vector(Nbit-1 downto 0);
+type bus is array (0 to 4) of std_logic_vector(Nbit-1 downto 0);
 
 component reg
 	generic (Nbit : natural := 8);
@@ -47,7 +47,7 @@ component ripple_carry_adder_substractor
 	);
 end component;
 
-signal samples	:	fullBus;
+signal samples	:	bus;
 signal output	:	std_logic_vector(Nbit+1 downto 0); 
 														
 signal partialBus1	:	std_logic_vector(Nbit+1 downto 0); 

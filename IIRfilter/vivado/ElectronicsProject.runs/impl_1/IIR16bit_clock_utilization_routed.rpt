@@ -1,12 +1,13 @@
-Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Oct  7 08:05:25 2021
-| Host         : LEO-DEV running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Nov  4 09:18:52 2021
+| Host         : LEO-WIN running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file IIR16bit_clock_utilization_routed.rpt
 | Design       : IIR16bit
 | Device       : 7z010-clg400
 | Speed File   : -1  PRODUCTION 1.11 2014-09-11
+| Design State : Routed
 --------------------------------------------------------------------------------------
 
 Clock Utilization Report
@@ -97,7 +98,7 @@ All Modules
 +-----------+-----------------+-------------------+----------+-------------+-------------------+-------------+----------+----------------+----------+---------------+
 | g0        | BUFG/O          | n/a               | clk44100 |   22676.000 | {0.000 11338.000} |          64 |        0 |              0 |        0 | clk_IBUF_BUFG |
 +-----------+-----------------+-------------------+----------+-------------+-------------------+-------------+----------+----------------+----------+---------------+
-* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
 *** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
 **** GT Loads column represents load cell count of GT types
